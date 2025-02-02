@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3wqkkb42rp83"]
+
+[ext_resource type="Script" path="res://Testing/Sprite.cs" id="1_k1ot7"]
+[ext_resource type="Texture2D" uid="uid://bbur8cq7xgc0s" path="res://icon.svg" id="2_dso1w"]
+[ext_resource type="PackedScene" uid="uid://df4tqi53rvyy" path="res://Testing/player.tscn" id="3_1y3ko"]
+[ext_resource type="Texture2D" uid="uid://cue0wuclocyti" path="res://Testing/icon_sliced.svg" id="4_n6n4f"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_04iaf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Node2D" parent="."]
+position = Vector2(605, 275)
+script = ExtResource("1_k1ot7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("2_dso1w")
+
+[node name="Player" parent="." instance=ExtResource("3_1y3ko")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(576, 295)
+texture = SubResource("CanvasTexture_04iaf")
+region_enabled = true
+region_rect = Rect2(30, 30, 60, 60)
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.136
+anchor_right = 0.894
+anchor_bottom = 0.839
+offset_left = 95.056
+offset_top = 25.6976
+offset_right = -87.1104
+offset_bottom = -27.1376
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "This is a little tooltip. I added it just to see where the tooltip pops up."
+mouse_filter = 1
+texture = ExtResource("4_n6n4f")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 60

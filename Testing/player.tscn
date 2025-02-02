@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://df4tqi53rvyy"]
+
+[ext_resource type="Script" path="res://Testing/Sprite.cs" id="1_3lljg"]
+[ext_resource type="Texture2D" uid="uid://bbur8cq7xgc0s" path="res://icon.svg" id="2_nai6b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0a0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nai6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nai6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nai6b")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_3lljg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t0a0u")
