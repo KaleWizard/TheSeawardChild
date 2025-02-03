@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://36qqia2li0j2"]
+
+[ext_resource type="Texture2D" uid="uid://do4l5og8btiy4" path="res://Assets/Sprites/NineSlice_Seaward_First.png" id="1_8vhml"]
+
+[node name="Main Scene" type="Node2D"]
+texture_filter = 1
+
+[node name="Main Camera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="NinePatchRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8vhml")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
